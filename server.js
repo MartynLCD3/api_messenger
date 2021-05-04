@@ -14,11 +14,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 
-router.get('/',(req,res)=>{
+router.get('/',cors(),(req,res)=>{
   res.json({status:"ok"});
 });
 
-router.get('/get_emails',(req,res)=>{
+router.get('/get_emails',cors(),(req,res)=>{
   get_emails(res);
 });
 
@@ -30,15 +30,15 @@ router.delete('/:_id',cors(),(req,res)=>{
   del_email(req,res);
 });
 
-router.get('/get_admin_email',(req,res)=>{
+router.get('/get_admin_email',cors(),(req,res)=>{
     get_admin_email(res);
 });
 
-router.post('/new_admin_email',(req,res)=>{
+router.post('/new_admin_email',cors(),(req,res)=>{
   admin_email(req,res);
 });
 
-router.put('/:new_email',(req,res)=>{
+router.put('/:new_email',cors(),(req,res)=>{
   upd_admin_email(req,res);
 })
 
