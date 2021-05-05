@@ -45,7 +45,7 @@ router.put('/:new_email',cors(),(req,res)=>{
 app.use('/api',router);
 
 app.get('*',(req,res) => {
-    res.status(404).json({error:"página no encontrada"});
+    res.status(404).json({msg:"error"});
 })
 
 const port = process.env.PORT || 3001;
