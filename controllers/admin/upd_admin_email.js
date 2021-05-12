@@ -6,6 +6,7 @@ export const upd_admin_email = (req,res) => {
   Promise.all([read_email()]).then(objects => {
     let [[admin_email]] = objects;
     let newEmail = {updateEmail:new_email};
-    update_admin_email(admin_email,newEmail,res);
+      update_admin_email(admin_email,newEmail);
     });
+  res.status(200).json({msg:"ok"});
 }

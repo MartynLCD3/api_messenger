@@ -25,5 +25,5 @@ export const send_email = (data_email,res) => {
     }
      console.log(info);
   });
-  save_email_format(data_email,res);
+  save_email_format(data_email);
 };
